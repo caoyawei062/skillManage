@@ -53,14 +53,22 @@
     },
     "files": [
       "dist/**/*",
-      "electron/**/*"
+      "electron/**/*",
+      "node_modules/lowdb/**/*"
     ],
     "extraMetadata": {
       "main": "electron/main.cjs"
     },
     "mac": {
       "category": "public.app-category.developer-tools",
-      "target": "dmg"
+      "target": ["dmg", "zip"]
+    },
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "category": "Development"
+    },
+    "win": {
+      "target": ["nsis", "portable"]
     }
   }
 }
